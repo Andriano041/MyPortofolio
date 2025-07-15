@@ -5,8 +5,8 @@ const Button = ({ children, onClick }) => {
 
   const style = {
     background: hover 
-      ? 'linear-gradient(45deg, #2fc805ff, #ffb347)' // warna lebih terang & gradien
-      : '#ff8800',
+      ? 'linear-gradient(45deg, #059ac8ff, #2c02ffff)' // warna lebih terang & gradien
+      : '#007fe8ff',
     color: '#fff',
     padding: '12px 28px',
     border: 'none',
@@ -17,8 +17,8 @@ const Button = ({ children, onClick }) => {
     transition: 'all 1.0s ease',
     marginTop: '18px',
     boxShadow: hover 
-      ? '0 8px 20px rgba(255, 196, 0, 0.5)'  // glow saat hover
-      : '0 4px 10px rgba(255, 166, 0, 0.2)',
+      ? '0 8px 20px rgba(0, 255, 225, 0.5)'  // glow saat hover
+      : '0 4px 10px rgba(0, 157, 255, 0.2)',
     transform: hover ? 'scale(1.05)' : 'scale(1)',
   };
 

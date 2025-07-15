@@ -1,7 +1,27 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   font-family: "Poppins", sans-serif;
 }
 
+.pageWrapper {
+  background-image: url('../assets/img/wall.jpg'); /* sesuaikan path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.home {
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.3); 
+  padding: 32px;
+  min-height: 100vh;
+}
+
+/* Animations */
 @keyframes slideDownFade {
   0% { opacity: 0; transform: translateY(-30px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -17,72 +37,67 @@
   50% { opacity: 0; }
 }
 
-/* h1 muncul dari atas */
-.fadeInTextH1 {
-  animation: slideDownFade 0.8s ease forwards;
+.fadeInTextH1 { animation: slideDownFade 0.8s ease forwards; }
+.typingName { display: inline-block; animation: slideDownFade 1s ease forwards; }
+.fadeInTextP { animation: slideUpFade 1.2s ease forwards; }
+
+/* Content layout */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1300px;
+  margin: 48px auto 0 auto;
+  gap: 48px;
 }
 
-/* nama dengan efek ketik (tetap dikontrol JS) muncul dari atas juga */
-.typingName {
-  display: inline-block;
-  animation: slideDownFade 1s ease forwards;
-}
+h1 { font-weight: bold; font-size: 25px; padding-top: 70px; }
+h2 { font-weight: bold; font-size: 40px; }
+h3 { font-weight: bold; font-size: 30px; padding-top: 40px; }
+p { font-weight: 200; font-size: 23px; line-height: 1.5; padding-top: 20px; max-width: 600px; }
 
-/* p muncul dari bawah */
-.fadeInTextP {
-  animation: slideUpFade 1.2s ease forwards;
-}
+.orange { color: #00e5ff; }
+.cursor { display: inline-block; margin-left: 2px; color: #00c8ff; animation: blink 0.8s infinite; }
 
-/* tech stack muncul bertahap */
+/* Tech Stack */
 .stackList {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
   margin-top: 8px;
 }
-.techStack h3 {
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: slideDownFade 0.8s ease forwards;
-  animation-delay: 0.7s; /* muncul setelah p muncul */
-}
-
 
 .stackItem {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #444;
+  background: #065fa32d;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;                      /* hidden awal */
-  transform: translateY(20px);     /* naik ke posisi */
+  opacity: 0;
+  transform: translateY(20px);
   animation: slideUpFade 0.6s ease forwards;
 }
 
 .stackItem img {
   width: 30px;
   height: 30px;
-  object-fit: contain;     /* supaya gambar tetap proporsional */
+  object-fit: contain;
 }
 
-/* staggered delay */
 .stackItem:nth-child(1) { animation-delay: 1.4s; }
 .stackItem:nth-child(2) { animation-delay: 1.6s; }
 .stackItem:nth-child(3) { animation-delay: 1.8s; }
 .stackItem:nth-child(4) { animation-delay: 2s; }
 .stackItem:nth-child(5) { animation-delay: 2.2s; }
 
-/* Hover effect */
 .stackItem:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 12px #ff8800, 0 0 20px rgba(255,136,0,0.5);
+  box-shadow: 0 0 12px #0088ff, 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-/* buttons muncul satu per satu */
 .buttonGroup {
   display: flex;
   gap: 20px;
@@ -99,72 +114,14 @@
 .buttonGroup button:nth-child(1) { animation-delay: 2.4s; }
 .buttonGroup button:nth-child(2) { animation-delay: 2.6s; }
 
-/* cursor ketik */
-.cursor {
-  display: inline-block;
-  margin-left: 2px;
-  color: #ff8800;
-  animation: blink 0.8s infinite;
+/* Sections bawah */
+.section {
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 60px 32px;
 }
 
-/* warna nama */
-.orange {
-  color: #ff8800;
-}
-
-/* layout */
-.home {
-  background-image: url('../assets/img/wall.jpg'); /* sesuaikan path */
-  background-size: cover;       
-  background-position: center;  
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  background-color: #323537; /* hanya warna, tidak timpa background-image */
-  color: #fff;
-  padding: 32px;
-}
-
-
-h1 {
-  font-weight: bold;
-  font-size: 25px;
-  text-align: left;
-  padding-top: 70px;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 40px;
-  text-align: left;
-}
-
-h3 {
-  font-weight: bold;
-  font-size: 30px;
-  text-align: left;
-  padding-top: 40px;
-}
-
-p {
-  font-weight: 200;
-  font-size: 23px;
-  line-height: 1.5;
-  text-align: left;
-  padding-top: 20px;
-  max-width: 600px;
-}
-
-.content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1300px;
-  margin: 48px auto 0 auto;
-  gap: 48px;
-  text-align: left;
-}
-
-/* responsif */
+/* Responsive */
 @media (max-width: 768px) {
   .content {
     flex-direction: column;

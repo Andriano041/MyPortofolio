@@ -1,15 +1,18 @@
 .navbar {
-   background: rgba(21, 43, 64, 0.488); /* transparansi 70% */
+  position: fixed;           /* Biar navbar tetap di atas */
+  top: 0;
+  left: 0;
+  width: 100%;               /* Lebar penuh */
+  background: rgba(21, 43, 64, 0.488); /* transparansi */
   backdrop-filter: blur(1px);
-  border-radius: 16px;
+  border-radius: 0px;
   padding: 10px 32px;
-  margin: 0 auto;
-  max-width: 1400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  z-index: 999;              /* Supaya tidak ketutupan konten lain */
 }
+
 
 /* Logo */
 .logo {
@@ -22,28 +25,47 @@
 /* Menu list */
 .navbar ul {
   display: flex;
+  font-weight: bold;
   gap: 52px;
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-left: auto; /* dorong menu ke kanan */
+  margin-left: auto;
 }
 
-/* Menu item */
-.navbar li {
-  color: #fff;
-  font-size: 1.1rem;
+/* Menu item link */
+.navbar li a {
+  color: #fff;                  /* default putih */
+  text-decoration: none;        /* hilangkan underline default */
+  position: relative;           /* untuk underline pseudo-element */
+  font-size: 1.4rem;
   padding: 6px 16px;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: color 0.3s ease;
 }
 
-/* Aktif & hover */
-.navbar li.active,
-.navbar li:hover {
+/* Underline animasi */
+.navbar li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #18adfd;
+  transition: width 0.3s ease;
+}
 
-  color: #fd9618;
+/* Saat hover atau aktif */
+.navbar li:hover a,
+.navbar li.active a {
+  color: #18adfd;
+}
+
+.navbar li:hover a::after,
+.navbar li.active a::after {
+  width: 100%;
 }
 
 /* Hamburger icon (hidden by default) */
@@ -52,7 +74,7 @@
   cursor: pointer;
   font-size: 24px;
   color: #fff;
-  margin-left: 16px; /* supaya tidak dempet */
+  margin-left: 16px;
 }
 
 /* Mobile styles */
@@ -63,7 +85,7 @@
 
   .navbar ul {
     position: absolute;
-    top: 100%;        /* tepat di bawah navbar */
+    top: 100%;
     right: 32px;
     background: #232425;
     flex-direction: column;
@@ -72,13 +94,18 @@
     margin-top: 8px;
     padding: 12px 0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    display: none;   /* default: hidden */
+    display: none;
     min-width: 180px;
     width: max-content;
     z-index: 100;
   }
 
   .navbar ul.show {
-    display: flex;   /* tampilkan saat toggle aktif */
+    display: flex;
+  }
+
+  .navbar li a {
+    font-size: 1.2rem;
+    text-align: left;
   }
 }

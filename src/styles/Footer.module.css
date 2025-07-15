@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(135deg, #f97316 0%, #DE6F08 100%);
+  background:rgb(0, 0, 0);
   color: white;
   padding: 60px 0 30px;
   width: 100vw; /* Tambahkan: agar selebar viewport */
@@ -30,14 +30,14 @@
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: black;
+  color: rgb(255, 255, 255);
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
 }
 
 .statCard p {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #fed7aa;
+  color: #ffffff;
   margin: 0;
 }
 
