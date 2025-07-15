@@ -33,7 +33,7 @@
   width: calc(100% + 12px);
   height: calc(100% + 12px);
   border-radius: 50%;
-  background: conic-gradient(#0a6bf2, #47ffea, #0af2a9);
+  background: conic-gradient(#0a6bf2, #47ffea, #440af2);
   animation: spinRing 6s linear infinite;
   z-index: 1;
   filter: blur(6px); 
