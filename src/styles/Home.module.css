@@ -114,11 +114,16 @@
 
 /* layout */
 .home {
+  background-image: url('../assets/img/wall.jpg'); /* sesuaikan path */
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat;
   min-height: 100vh;
-  background: #323537;
+  background-color: #323537; /* hanya warna, tidak timpa background-image */
   color: #fff;
   padding: 32px;
 }
+
 
 h1 {
   font-weight: bold;

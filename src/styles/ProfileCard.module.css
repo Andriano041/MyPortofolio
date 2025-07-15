@@ -21,7 +21,7 @@
   padding: 5px;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(241, 173, 2, 0.5);
+  box-shadow: 0 8px 20px rgba(2, 221, 241, 0.5);
   transition: all 0.3s ease;
 }
 
@@ -33,18 +33,18 @@
   width: calc(100% + 12px);
   height: calc(100% + 12px);
   border-radius: 50%;
-  background: conic-gradient(#0af22d, #ffb347, #0af22d);
+  background: conic-gradient(#0a6bf2, #47ffea, #0af2a9);
   animation: spinRing 6s linear infinite;
   z-index: 1;
   filter: blur(6px); 
   transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(10, 242, 45, 0.4), 0 0 30px rgba(255, 179, 71, 0.3);
+  box-shadow: 0 0 20px rgba(10, 242, 45, 0.4), 0 0 30px rgba(71, 212, 255, 0.3);
 }
 
 /* Hover effect: glow + shadow lebih besar + scale */
 .profileWrapper:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 40px rgba(241, 173, 2, 0.7);
+  box-shadow: 0 12px 40px rgba(2, 225, 241, 0.7);
 }
 
 .profileWrapper:hover::before {
@@ -71,7 +71,7 @@
 
 .icons svg:hover,
 .iconImg:hover {
-  color: #e06d00;
+  color: #004ee0;
   transform: scale(1.2);
   filter: drop-shadow(0 0 6px #ffffff);
 }

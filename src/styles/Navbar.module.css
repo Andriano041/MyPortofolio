@@ -1,5 +1,6 @@
 .navbar {
-  background: #232425;
+   background: rgba(21, 43, 64, 0.488); /* transparansi 70% */
+  backdrop-filter: blur(1px);
   border-radius: 16px;
   padding: 10px 32px;
   margin: 0 auto;
