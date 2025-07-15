@@ -1,0 +1,83 @@
+.navbar {
+  background: #232425;
+  border-radius: 16px;
+  padding: 10px 32px;
+  margin: 0 auto;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Menu list */
+.navbar ul {
+  display: flex;
+  gap: 52px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: auto; /* dorong menu ke kanan */
+}
+
+/* Menu item */
+.navbar li {
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 6px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+/* Aktif & hover */
+.navbar li.active,
+.navbar li:hover {
+
+  color: #fd9618;
+}
+
+/* Hamburger icon (hidden by default) */
+.menuToggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+  margin-left: 16px; /* supaya tidak dempet */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menuToggle {
+    display: block;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 100%;        /* tepat di bawah navbar */
+    right: 32px;
+    background: #232425;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 12px;
+    margin-top: 8px;
+    padding: 12px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    display: none;   /* default: hidden */
+    min-width: 180px;
+    width: max-content;
+    z-index: 100;
+  }
+
+  .navbar ul.show {
+    display: flex;   /* tampilkan saat toggle aktif */
+  }
+}
