@@ -134,7 +134,7 @@ p {
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(10px);
-  background: rgba(109, 109, 109, 0.14);
+  background: rgba(70, 70, 70, 0.14);
   border-radius: 16px;
   padding: 32px;
   max-width: 1400px;

@@ -87,6 +87,10 @@ export default function Home() {
   <div className={styles.aboutContent}>
     <ProfileCard image={anotherProfileImg} />
     <p>
+      <h2 className={styles.typingName}>
+        <span className={styles.orange}>{displayText}</span>
+        <span className={styles.cursor}>|</span>
+        </h2>
       I am passionate about designing and developing modern web applications with great user experience.
       I love exploring new technologies and turning ideas into digital products.
     </p>
