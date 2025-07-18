@@ -12,6 +12,8 @@ import jsIcon from "../assets/img/js.png";
 import reactIcon from "../assets/img/React.png";
 import figmaIcon from "../assets/img/figma.png";
 
+import anotherProfileImg from "../assets/img/gun.jpg"; 
+
 export default function Home() {
   const fullText = "Hi, I'm Andriano Gs.";
   const [displayText, setDisplayText] = useState("");
@@ -38,7 +40,8 @@ export default function Home() {
       }
     }, speed);
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, index]);
+   }, [displayText, isDeleting, index, speed, fullText]);
+
 
   return (
     <div className={styles.pageWrapper}>
@@ -79,9 +82,18 @@ export default function Home() {
 
       {/* ABOUT SECTION */}
       <section id="about" className={styles.section}>
-        <h2>About</h2>
-        <p>I am passionate about designing and developing modern web applications with great user experience. I love exploring new technologies and turning ideas into digital products.</p>
-      </section>
+  <h2 className={styles.aboutTitle}>About Me</h2>
+  <div className={styles.titleUnderline}></div>
+  <div className={styles.aboutContent}>
+    <ProfileCard image={anotherProfileImg} />
+    <p>
+      I am passionate about designing and developing modern web applications with great user experience.
+      I love exploring new technologies and turning ideas into digital products.
+    </p>
+  </div>
+</section>
+
+
 
       {/* PROJECT SECTION */}
       <section id="project" className={styles.section}>

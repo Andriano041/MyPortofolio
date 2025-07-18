@@ -7,7 +7,7 @@ html {
 }
 
 .pageWrapper {
-  background-image: url('../assets/img/wall.jpg');
+  background-image: url("../assets/img/wall.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -16,35 +16,59 @@ html {
 
 .home {
   backdrop-filter: blur(6px);
-  background: rgba(0, 0, 0, 0.3); 
+  background: rgba(0, 0, 0, 0.3);
   padding: 32px;
-  min-height: 100vh;
+  min-height: 100 vh;
 }
 
 /* Animations */
 @keyframes slideDownFade {
-  0% { opacity: 0; transform: translateY(-30px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideUpFade {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
-.fadeInTextH1 { animation: slideDownFade 0.8s ease forwards; }
-.typingName { display: inline-block; animation: slideDownFade 1s ease forwards; }
-.fadeInTextP { animation: slideUpFade 1.2s ease forwards; }
+.fadeInTextH1 {
+  animation: slideDownFade 0.8s ease forwards;
+}
+.typingName {
+  display: inline-block;
+  animation: slideDownFade 1s ease forwards;
+}
+.fadeInTextP {
+  animation: slideUpFade 1.2s ease forwards;
+}
 
 /* Tech Stack h3 muncul bertahap */
 .techStack h3 {
   opacity: 0;
-  transform: translateY(-20px); 
+  transform: translateY(-20px);
   animation: slideDownFade 0.8s ease forwards;
   animation-delay: 1.4s; /* muncul setelah p */
 }
@@ -59,45 +83,101 @@ html {
   gap: 48px;
 }
 .typingName {
-  display: block;              /* block agar lebar penuh */
-  text-align: left;            /* pastikan tetap kiri */
+  display: block; /* block agar lebar penuh */
+  text-align: left; /* pastikan tetap kiri */
   animation: slideDownFade 1s ease forwards;
-  white-space: nowrap;         /* huruf tetap di satu baris */
-  overflow: hidden;            /* sembunyikan sisa saat ketik */
+  white-space: nowrap; /* huruf tetap di satu baris */
+  overflow: hidden; /* sembunyikan sisa saat ketik */
 }
 
 
-h1 { 
-  font-weight: bold; 
-  font-size: 25px; 
-  padding-top: 70px; 
+
+
+/* berlaku untuk semua text section */
+h1 {
+  font-weight: bold;
+  font-size: 25px;
+  padding-top: 70px;
   text-align: left;
 }
 
-h2 { 
-  font-weight: bold; 
-  font-size: 40px; 
-  text-align: left;  /* pastikan tetap rata kiri */
+h2 {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center; /* pastikan tetap rata kiri */
+  margin-top: 30px;
 }
 
-h3 { 
-  font-weight: bold; 
-  font-size: 30px; 
-  padding-top: 40px; 
+h3 {
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 40px;
   text-align: left;
 }
 
-p { 
-  font-weight: 200; 
-  font-size: 23px; 
-  line-height: 1.5; 
-  padding-top: 20px; 
-  max-width: 600px; 
-  text-align: left;
+p {
+  font-weight: 200;
+  font-size: 23px;
+  line-height: 1.5;
+  padding-top: 20px;
+  max-width: 600px;
+  text-align: left
+  ;
 }
 
-.orange { color: #00e5ff; }
-.cursor { display: inline-block; margin-left: 2px; color: #00c8ff; animation: blink 0.8s infinite; }
+
+
+
+/* Persection About */
+.aboutContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  background: rgba(109, 109, 109, 0.14);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 32px;
+}
+
+
+/* Supaya teks p tetap rapi di kiri */
+.aboutContent p {
+  max-width: 600px;
+  text-align: left;
+  margin-left: 130px;
+}
+
+/* for h2 about */
+.aboutTitle {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center; /* atau left, sesuai desainmu */
+  margin-top: 130px;   /* khusus hanya untuk h2 About */
+}
+
+/* for h2 about */
+.titleUnderline {
+  width: 180px;
+  height: 2px;
+  background: linear-gradient(90deg, #00e5ff, #8e2de2);
+  margin: 0 auto 24px auto;
+  border-radius: 2px;
+}
+
+
+
+.orange {
+  color: #00e5ff;
+}
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: #00c8ff;
+  animation: blink 0.8s infinite;
+}
 
 /* Tech Stack */
 .stackList {
@@ -115,7 +195,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   opacity: 0;
   transform: translateY(20px);
   animation: slideUpFade 0.6s ease forwards;
@@ -128,11 +208,21 @@ p {
 }
 
 /* Delay untuk muncul bertahap */
-.stackItem:nth-child(1) { animation-delay: 1.6s; }
-.stackItem:nth-child(2) { animation-delay: 1.8s; }
-.stackItem:nth-child(3) { animation-delay: 2s; }
-.stackItem:nth-child(4) { animation-delay: 2.2s; }
-.stackItem:nth-child(5) { animation-delay: 2.4s; }
+.stackItem:nth-child(1) {
+  animation-delay: 1.6s;
+}
+.stackItem:nth-child(2) {
+  animation-delay: 1.8s;
+}
+.stackItem:nth-child(3) {
+  animation-delay: 2s;
+}
+.stackItem:nth-child(4) {
+  animation-delay: 2.2s;
+}
+.stackItem:nth-child(5) {
+  animation-delay: 2.4s;
+}
 
 .stackItem:hover {
   transform: scale(1.1);
@@ -152,8 +242,12 @@ p {
   animation: slideUpFade 0.6s ease forwards;
 }
 
-.buttonGroup button:nth-child(1) { animation-delay: 2.6s; }
-.buttonGroup button:nth-child(2) { animation-delay: 2.8s; }
+.buttonGroup button:nth-child(1) {
+  animation-delay: 2.6s;
+}
+.buttonGroup button:nth-child(2) {
+  animation-delay: 2.8s;
+}
 
 /* Sections bawah */
 .section {
