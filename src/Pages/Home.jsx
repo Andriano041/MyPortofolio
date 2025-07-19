@@ -5,6 +5,7 @@ import Button from "../Components/Button";
 import Footer from "../Components/Footer";
 import styles from "../styles/Home.module.css";
 
+
 // Import icons
 import htmlIcon from "../assets/img/html.png";
 import cssIcon from "../assets/img/Css.png";
@@ -57,7 +58,7 @@ export default function Home() {
               <span className={styles.cursor}>|</span>
             </h2>
             <p className={styles.fadeInTextP}>
-              I’m a web designer, creative thinker, and UI/UX enthusiast passionate about turning ideas into engaging, human‑centered digital experiences.
+              Frontend Developer | UI/UX Designer
             </p>
 
             <div className={`${styles.techStack} ${styles.fadeInStack}`}>
@@ -84,17 +85,28 @@ export default function Home() {
       <section id="about" className={styles.section}>
   <h2 className={styles.aboutTitle}>About Me</h2>
   <div className={styles.titleUnderline}></div>
-  <div className={styles.aboutContent}>
-    <ProfileCard image={anotherProfileImg} />
-    <p>
-      <h2 className={styles.typingName}>
-        <span className={styles.orange}>{displayText}</span>
-        <span className={styles.cursor}>|</span>
-        </h2>
-      I am passionate about designing and developing modern web applications with great user experience.
-      I love exploring new technologies and turning ideas into digital products.
-    </p>
+<div className={styles.aboutContent}>
+  <ProfileCard image={anotherProfileImg} />
+  <div className={styles.aboutDetails}>
+    <div className={styles.aboutBlock}>
+      <h3 className={styles.aboutBlockTitle}>🎓 Computer Science Student at Klabat University</h3>
+      <p>Hometown: Manado, North Sulawesi</p>
+      <p>Currently Living in: Klabat</p>
+    </div>
+    <div className={styles.aboutBlock}>
+      <h3 className={styles.aboutBlockTitle}>🛠️ Expanded Tech Stack</h3>
+      <p>Frontend: HTML5, CSS3, JavaScript, React</p>
+      <p>Tools: Git, Responsive Design</p>
+    </div>
+    <div className={styles.aboutBlock}>
+      <h3 className={styles.aboutBlockTitle}>🎨 Passions & Interests</h3>
+      <p>UI/UX Design as my main focus</p>
+      <p>Web Development & responsive design</p>
+      <p>User research & usability testing</p>
+    </div>
   </div>
+</div>
+
 </section>
 
 

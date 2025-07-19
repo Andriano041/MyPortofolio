@@ -1,266 +1,294 @@
-html {
-  scroll-behavior: smooth;
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-* {
-  font-family: "Poppins", sans-serif;
-}
+  * {
+    font-family: "Poppins", sans-serif;
+  }
 
-.pageWrapper {
-  background-image: url("../assets/img/wall.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #fff;
-}
+  .pageWrapper {
+    background-image: url("../assets/img/wall.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+  }
 
-.home {
-  backdrop-filter: blur(6px);
-  background: rgba(0, 0, 0, 0.3);
-  padding: 32px;
-  min-height: 100 vh;
-}
+  .home {
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 32px;
+    min-height: 100vh;
+  }
 
-/* Animations */
-@keyframes slideDownFade {
-  0% {
+  /* Animations */
+  @keyframes slideDownFade {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUpFade {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .fadeInTextH1 {
+    animation: slideDownFade 0.8s ease forwards;
+  }
+  .typingName {
+    display: inline-block;
+    animation: slideDownFade 1s ease forwards;
+  }
+  .fadeInTextP {
+    animation: slideUpFade 1.2s ease forwards;
+  }
+
+  /* Tech Stack h3 muncul bertahap */
+  .techStack h3 {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-20px);
+    animation: slideDownFade 0.8s ease forwards;
+    animation-delay: 1.4s; /* muncul setelah p */
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  /* Content layout */
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1300px;
+    margin: 150px auto 0 auto;
+    gap: 48px;
   }
-}
-
-@keyframes slideUpFade {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
+  .typingName {
+    display: block; /* block agar lebar penuh */
+    text-align: left; /* pastikan tetap kiri */
+    animation: slideDownFade 1s ease forwards;
+    white-space: nowrap; /* huruf tetap di satu baris */
+    overflow: hidden; /* sembunyikan sisa saat ketik */
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+
+
+
+  /* berlaku untuk semua text section */
+  h1 {
+    font-weight: bold;
+    font-size: 25px;
+    padding-top: 40px;
+    text-align: left;
+   
   }
-}
 
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
+  h2 {
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center; /* pastikan tetap rata kiri */
+    margin-top: 30px;
   }
-  50% {
-    opacity: 0;
+
+  h3 {
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: px;
+    text-align: left;
   }
-}
 
-.fadeInTextH1 {
-  animation: slideDownFade 0.8s ease forwards;
-}
-.typingName {
-  display: inline-block;
-  animation: slideDownFade 1s ease forwards;
-}
-.fadeInTextP {
-  animation: slideUpFade 1.2s ease forwards;
-}
-
-/* Tech Stack h3 muncul bertahap */
-.techStack h3 {
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: slideDownFade 0.8s ease forwards;
-  animation-delay: 1.4s; /* muncul setelah p */
-}
-
-/* Content layout */
-.content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1300px;
-  margin: 48px auto 0 auto;
-  gap: 48px;
-}
-.typingName {
-  display: block; /* block agar lebar penuh */
-  text-align: left; /* pastikan tetap kiri */
-  animation: slideDownFade 1s ease forwards;
-  white-space: nowrap; /* huruf tetap di satu baris */
-  overflow: hidden; /* sembunyikan sisa saat ketik */
-}
+  p {
+    font-weight: 200;
+    font-size: 23px;
+    line-height: 1.5;
+    padding-top: 20px;
+    max-width: 600px;
+    text-align: left
+    ;
+  }
 
 
 
 
-/* berlaku untuk semua text section */
-h1 {
-  font-weight: bold;
-  font-size: 25px;
-  padding-top: 70px;
-  text-align: left;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 40px;
-  text-align: center; /* pastikan tetap rata kiri */
-  margin-top: 30px;
-}
-
-h3 {
-  font-weight: bold;
-  font-size: 30px;
-  padding-top: 40px;
-  text-align: left;
-}
-
-p {
-  font-weight: 200;
-  font-size: 23px;
-  line-height: 1.5;
-  padding-top: 20px;
-  max-width: 600px;
-  text-align: left
-  ;
-}
-
-
-
-
-/* Persection About */
+  /* Persection About */
 .aboutContent {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  max-width: 1300px;
+  margin: 40px auto; /* jarak atas bawah khusus about */
+  padding: 32px;
   backdrop-filter: blur(10px);
   background: rgba(70, 70, 70, 0.14);
   border-radius: 16px;
-  padding: 32px;
-  max-width: 1400px;
-  margin: 0 auto;
   gap: 32px;
 }
 
 
-/* Supaya teks p tetap rapi di kiri */
-.aboutContent p {
-  max-width: 600px;
-  text-align: left;
-  margin-left: 130px;
-}
-
-/* for h2 about */
-.aboutTitle {
-  font-weight: bold;
-  font-size: 40px;
-  text-align: center; /* atau left, sesuai desainmu */
-  margin-top: 130px;   /* khusus hanya untuk h2 About */
-}
-
-/* for h2 about */
-.titleUnderline {
-  width: 180px;
-  height: 2px;
-  background: linear-gradient(90deg, #00e5ff, #8e2de2);
-  margin: 0 auto 24px auto;
-  border-radius: 2px;
-}
-
-
-
-.orange {
-  color: #00e5ff;
-}
-.cursor {
-  display: inline-block;
-  margin-left: 2px;
-  color: #00c8ff;
-  animation: blink 0.8s infinite;
-}
-
-/* Tech Stack */
-.stackList {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.stackItem {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #065fa32d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUpFade 0.6s ease forwards;
-}
-
-.stackItem img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-}
-
-/* Delay untuk muncul bertahap */
-.stackItem:nth-child(1) {
-  animation-delay: 1.6s;
-}
-.stackItem:nth-child(2) {
-  animation-delay: 1.8s;
-}
-.stackItem:nth-child(3) {
-  animation-delay: 2s;
-}
-.stackItem:nth-child(4) {
-  animation-delay: 2.2s;
-}
-.stackItem:nth-child(5) {
-  animation-delay: 2.4s;
-}
-
-.stackItem:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 12px #0088ff, 0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-.buttonGroup {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.buttonGroup button {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUpFade 0.6s ease forwards;
-}
-
-.buttonGroup button:nth-child(1) {
-  animation-delay: 2.6s;
-}
-.buttonGroup button:nth-child(2) {
-  animation-delay: 2.8s;
-}
-
-/* Sections bawah */
-.section {
-  backdrop-filter: blur(6px);
-  background: rgba(0, 0, 0, 0.3);
-  padding: 60px 32px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-    align-items: center;
-    /* text-align: center; dihapus supaya h1, h2, h3 tetap rata kiri */
+  /* Supaya teks p tetap rapi di kiri */
+  .aboutContent p {
+    max-width: 600px;
+    text-align: left;
+    margin-left: 130px;
   }
-}
+
+  /* for h2 about */
+  .aboutTitle {
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center; /* atau left, sesuai desainmu */
+    margin-top: 40px;   /* khusus hanya untuk h2 About */
+  }
+
+  .aboutDetails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  
+    .aboutBlockTitle {
+    color: rgb(0, 200, 255);                   /* sesuai desain */
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+
+  .aboutBlock {
+    background: rgba(0,0,0,0.3);      /* semi transparan */
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 16px 30px;
+    flex: 1 1 250px;                 /* minimal lebar blok */
+    color: #fff;
+    text-align: left !important;
+  }
+
+
+
+  /* for h2 about */
+  .titleUnderline {
+    width: 180px;
+    height: 2px;
+    background: linear-gradient(90deg, #00e5ff, #8e2de2);
+    margin: 0 auto 24px auto;
+    border-radius: 2px;
+  }
+
+
+
+  .orange {
+    color: #00e5ff;
+  }
+  .cursor {
+    display: inline-block;
+    margin-left: 2px;
+    color: #00c8ff;
+    animation: blink 0.8s infinite;
+  }
+
+  /* Tech Stack */
+  .stackList {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .stackItem {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #065fa32d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFade 0.6s ease forwards;
+  }
+
+  .stackItem img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+
+  /* Delay untuk muncul bertahap */
+  .stackItem:nth-child(1) {
+    animation-delay: 1.6s;
+  }
+  .stackItem:nth-child(2) {
+    animation-delay: 1.8s;
+  }
+  .stackItem:nth-child(3) {
+    animation-delay: 2s;
+  }
+  .stackItem:nth-child(4) {
+    animation-delay: 2.2s;
+  }
+  .stackItem:nth-child(5) {
+    animation-delay: 2.4s;
+  }
+
+  .stackItem:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px #0088ff, 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  .buttonGroup {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .buttonGroup button {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFade 0.6s ease forwards;
+  }
+
+  .buttonGroup button:nth-child(1) {
+    animation-delay: 2.6s;
+  }
+  .buttonGroup button:nth-child(2) {
+    animation-delay: 2.8s;
+  }
+
+  /* Sections bawah */
+  .section {
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 60px 32px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+      align-items: center;
+      /* text-align: center; dihapus supaya h1, h2, h3 tetap rata kiri */
+    }
+  }
